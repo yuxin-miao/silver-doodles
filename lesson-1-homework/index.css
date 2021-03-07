@@ -1,0 +1,21 @@
+.main-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header{
+  height: 80px;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vh;
+}
+
