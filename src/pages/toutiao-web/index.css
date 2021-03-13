@@ -1,0 +1,41 @@
+.toutiao-web {
+  font: 12px/1.14 PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,Helvetica Neue,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  /* outline: 0; */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.top-header {
+  background-color: #222222;
+  height: 30px;
+  margin-bottom: 16px;
+}
+
+
+.main-content {
+  /* height: 100%;
+  width: 100%; */
+  display: flex;
+  flex: 1;
+  background-color: cadetblue;
+}
+
+.center {
+  flex: 1;
+  background-color: brown;
+}
+
+.left .right {
+  /* 两个边栏的宽度设为12em */
+  flex: 0 0 12em;
+  background-color: burlywood;
+}
+
+.left {
+  /* 导航放到最左边 */
+  order: -1;
+  background-color: cadetblue;
+}
