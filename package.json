@@ -1,5 +1,5 @@
 {
-  "name": "toutiao-web",
+  "name": "silver-doodles",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,7 +45,9 @@
   "devDependencies": {
     "@types/react-router": "^5.1.12",
     "@types/react-router-dom": "^5.1.7",
+    "eslint": "^7.22.0",
     "less": "^4.1.1",
-    "less-loader": "^8.0.0"
+    "less-loader": "^8.0.0",
+    "prettier-eslint": "^12.0.0"
   }
 }

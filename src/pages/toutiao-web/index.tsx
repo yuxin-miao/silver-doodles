@@ -1,6 +1,8 @@
 import React from 'react';
 import './index.css';
 import { SectionHeader } from './components/section-header';
+import { SectionNav } from './components/section-nav';
+import { SectionRight } from './components/section-right';
 
 export function ToutiaoWeb() {
   return (
@@ -9,9 +11,13 @@ export function ToutiaoWeb() {
         <SectionHeader />
       </div>
       <div className="main-content">
-        <div className="center"></div>
-        <div className="left"> </div>
-        <div className="right"> </div>
+        <nav className="left">
+          <SectionNav />
+        </nav>
+        <main className="center"></main>
+        <aside className="right"> 
+          <SectionRight/>
+        </aside>
       </div>
    </div>  
   )

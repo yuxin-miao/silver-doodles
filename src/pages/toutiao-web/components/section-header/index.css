@@ -1,0 +1,23 @@
+.header-content {
+  height: 34px;
+  background-color: #222222;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 14px;
+
+}
+/* .header-part {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+} */
+span {
+  padding: 0 10px;
+}
+
+.right-border {
+  border-right: 1px solid #3a3a3a;
+}
