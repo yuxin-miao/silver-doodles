@@ -1,0 +1,27 @@
+.login-part {
+  height: 161px;
+  padding: 20px 28px 15px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  letter-spacing: 0;
+}
+
+.login-msg {
+  font-size: 12px;
+  line-height: 17px;
+  color: #777;
+}
+
+.login-button {
+  width: 240px;
+  height: 40px;
+  margin: 16px 0 14px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+  background: #ed4040;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
