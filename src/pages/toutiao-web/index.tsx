@@ -3,6 +3,7 @@ import './index.css';
 import { SectionHeader } from './components/section-header';
 import { SectionNav } from './components/section-nav';
 import { SectionRight } from './components/section-right';
+import { SectionFeed } from './components/section-feed';
 
 export function ToutiaoWeb() {
   return (
@@ -14,7 +15,9 @@ export function ToutiaoWeb() {
         <nav className="left">
           <SectionNav />
         </nav>
-        <main className="center"></main>
+        <main className="center">
+          <SectionFeed />
+        </main>
         <aside className="right"> 
           <SectionRight/>
         </aside>
