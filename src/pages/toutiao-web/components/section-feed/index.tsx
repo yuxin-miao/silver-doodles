@@ -1,5 +1,6 @@
 import React from "react";
 import { FeedNews } from "../../types";
+import { newsType, mediaType } from '../../types/enum'
 import './index.css';
 
 export const SectionFeed: React.FC = () => {
@@ -29,7 +30,16 @@ export const SectionFeed: React.FC = () => {
         </div>
         <div className="footer-bar">
           <div className="footer-tag">
-            
+            {newsType[item.news_type]}
+          </div>
+          <div className="footer-text-box">
+            <div className="footer-text">{mediaType[item.media]} ·</div>
+          </div>
+          <div className="footer-text-box">
+            <div className="footer-text">{item.commit_num}评论数 ·</div>
+          </div>
+          <div className="footer-text-box">
+            <div className="footer-text">{item.time}</div>
           </div>
         </div>
       </div>
@@ -38,8 +48,13 @@ export const SectionFeed: React.FC = () => {
   const PicBox = (item: FeedNews) => {
     return (
       <div className="pic-mode">
-        <div className="title-box">
-          {item.title}
+        <div className="pic-left-box">
+          
+        </div>
+        <div className="pic-right-box">
+          <div className="title-box">
+            {item.title}
+          </div>
         </div>
       </div>
     )
