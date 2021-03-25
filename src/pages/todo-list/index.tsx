@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {observer} from "mobx-react";
 
-import TodoCategory from './TodoCategory/todoCategory';
-import TodoList from './TodoList/index';
+import TodoCategory from './components/TodoCategory';
+import TodoList from './components/TodoList';
 import 'antd/dist/antd.css';
 import './App.css';
 import { Layout } from 'antd';

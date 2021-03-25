@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Main from '../main';
 import { ToutiaoWeb } from '../toutiao-web';
+import TodoApp from '../todo-list';
 
 export const Catalog: React.FC = () => {
   return (
@@ -13,7 +14,8 @@ export const Catalog: React.FC = () => {
         <Route path="/about">
           <ToutiaoWeb />
         </Route>
-        <Route path="/users">
+        <Route path="/todo">
+          <TodoApp />
         </Route>
         <Route path="/">
           <Main/>
