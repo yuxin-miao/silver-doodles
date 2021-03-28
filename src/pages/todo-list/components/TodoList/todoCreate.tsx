@@ -3,7 +3,7 @@ import {observer} from "mobx-react";
 import { Form, Input, Button } from 'antd';
 import Icon from '@ant-design/icons';
 import TodoStore from '../../store/todoStore';
-import DetailCreate from '../TodoDetail/todoDetailCreate';
+import { CreateDetail } from '../TodoDetail/todoDetailCreate';
 
 // const {  Form, Input, Button, Raidio} = antd;
 
@@ -82,7 +82,7 @@ class TodoCreate extends React.Component<any, any> {
           </Button>
         </Form.Item>
       </Form>
-      <DetailCreate />
+      <CreateDetail />
       </>
     );
   } 

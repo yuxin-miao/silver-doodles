@@ -4,18 +4,11 @@ import { ThisTodoItem } from '../../constant/Interface';
 import FormComponentProps  from 'antd/lib/form';
 import moment from 'moment'
 import TodoStore from '../../store/todoStore';
-import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker } from 'antd';
-import { Icon } from '@antd-design/icons'
-
-// const { Option } = Select;
+import { Drawer, Form, Button, Col, Row, Input, DatePicker } from 'antd';
+import Icon from '@ant-design/icons';
 
 @observer
-class CreateDetail extends React.Component<FormComponentProps, any> {
-    constructor(props: any) {
-        super(props);
-
-        // this.handleSubmit = this.handleSubmit.bind(this);
-    }
+export class CreateDetail extends React.Component<FormComponentProps, any> {
 
     onClose = () => {
         TodoStore.showDetailCreate = false;
@@ -58,7 +51,7 @@ class CreateDetail extends React.Component<FormComponentProps, any> {
                     visible={TodoStore.showDetailCreate}
                     bodyStyle={{ paddingBottom: 80 }}
                   >
-                    <Form layout="vertical" onSubmit={this.handleSubmit} >
+                    <Form layout="vertical" onFinish={this.handleSubmit} >
                       <Row gutter={16}>
                         <Col span={17}>
                           <Form.Item label="标题">
@@ -139,4 +132,4 @@ class CreateDetail extends React.Component<FormComponentProps, any> {
 
 // const WrappedTodoDetailCreate = Form.create({name: 'todo_create'})(DetailCreate);
 
-export default Form.create({name: 'todo_create'})(CreateDetail);
+// export default Form.create({name: 'todo_create'})(CreateDetail);

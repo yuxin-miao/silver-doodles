@@ -1,22 +1,16 @@
 import React from 'react';
 import {observer} from "mobx-react";
 import { ThisTodoItem } from '../../constant/Interface';
-import { FormComponentProps } from 'antd/lib/form';
+import FormComponentProps from 'antd/lib/form';
 import moment from 'moment'
 import TodoStore from '../../store/todoStore';
-import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon } from 'antd';
+import { Drawer, Form, Button, Col, Row, Input, DatePicker } from 'antd';
+import Icon from '@ant-design/icons';
 
 // const { Option } = Select;
 
 @observer
-class ShowDetail extends React.Component<FormComponentProps, any> {
-    constructor(props: any) {
-        super(props);
-
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // handleSubmit with arrow function resolve the this problem 
-    }
-
+export class ShowDetail extends React.Component<FormComponentProps, any> {
     onClose = () => {
         TodoStore.showDetailTodo= false;
     }
@@ -61,7 +55,7 @@ class ShowDetail extends React.Component<FormComponentProps, any> {
                     visible={TodoStore.showDetailTodo}
                     bodyStyle={{ paddingBottom: 80 }}
                   >
-                    <Form layout="vertical" onSubmit={this.handleSubmit} >
+                    <Form layout="vertical" onFinish={this.handleSubmit} >
                       <Row gutter={16}>
                         <Col span={17}>
                           <Form.Item label="标题">
@@ -139,5 +133,3 @@ class ShowDetail extends React.Component<FormComponentProps, any> {
 
 }
 
-
-export default Form.create({name: 'todo_edit'})(ShowDetail);
