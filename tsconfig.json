@@ -6,23 +6,14 @@
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
+    // "module": "commonjs",
     "pretty": true,
     "target": "esnext",
+    // for vscode typescript type check
     "module": "esnext",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    // for all syntax declaration
+    "lib": ["dom", "esnext"]
   },
   "include": [
     "src"

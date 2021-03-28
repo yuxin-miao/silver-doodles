@@ -1,10 +1,11 @@
 import React from 'react';
 import {observer} from "mobx-react";
 import { ThisTodoItem } from '../../constant/Interface';
-import { FormComponentProps } from 'antd/lib/form';
+import FormComponentProps  from 'antd/lib/form';
 import moment from 'moment'
 import TodoStore from '../../store/todoStore';
-import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon } from 'antd';
+import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker } from 'antd';
+import { Icon } from '@antd-design/icons'
 
 // const { Option } = Select;
 
