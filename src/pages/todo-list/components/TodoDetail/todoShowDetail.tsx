@@ -1,25 +1,20 @@
 import React from 'react';
 import {observer} from "mobx-react";
 import { ThisTodoItem } from '../../constant/Interface';
-import { FormComponentProps } from 'antd/lib/form';
+import FormComponentProps from 'antd/lib/form';
 import moment from 'moment'
 import TodoStore from '../../store/todoStore';
-import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon } from 'antd';
+import { Drawer, Form, Button, Col, Row, Input, DatePicker } from 'antd';
+import Icon from '@ant-design/icons';
 
 // const { Option } = Select;
 
 @observer
-class CreateDetail extends React.Component<FormComponentProps, any> {
-    constructor(props: any) {
-        super(props);
-
-        // this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
+export class ShowDetail extends React.Component<FormComponentProps, any> {
     onClose = () => {
-        TodoStore.showDetailCreate = false;
-
+        TodoStore.showDetailTodo= false;
     }
+
     handleSubmit = (e: any) => {
         e.preventDefault();
         this.props.form.validateFields((err, fieldsValue) => {
@@ -40,35 +35,38 @@ class CreateDetail extends React.Component<FormComponentProps, any> {
                 expire_date: values['date-time-picker'],
                 create_date: now.toLocaleDateString(),
             }
-            TodoStore.detailCreateTodo(newTodo)
+            TodoStore.editDetailTodo(newTodo)
             this.onClose(); 
+            this.props.form.resetFields();
           });
     }
+
     
     render() {
         const { getFieldDecorator } = this.props.form;
 
         return (
+
                 <div>
                   <Drawer
-                    title="创建新的Todo"
+                    title="更多"
                     width={500}
                     onClose={this.onClose}
-                    visible={TodoStore.showDetailCreate}
+                    visible={TodoStore.showDetailTodo}
                     bodyStyle={{ paddingBottom: 80 }}
                   >
-                    <Form layout="vertical" onSubmit={this.handleSubmit} >
+                    <Form layout="vertical" onFinish={this.handleSubmit} >
                       <Row gutter={16}>
                         <Col span={17}>
                           <Form.Item label="标题">
                             {getFieldDecorator('formTitle', {
-                              rules: [{ required: true, message: '标题不可为空' }],
+                                initialValue: TodoStore.todoSelect.title
                             })(
                             <Input 
                                 placeholder="请输入标题" 
                                 suffix={
-                                  <Icon type="edit" style={{ color: 'rgba(0,0,0,.2)'}}/> 
-                              }
+                                    <Icon type="edit" style={{ color: 'rgba(0,0,0,.2)'}}/> 
+                                }
                                 />
                             )} 
                           </Form.Item>
@@ -80,8 +78,7 @@ class CreateDetail extends React.Component<FormComponentProps, any> {
                         <Col span={17}>
                           <Form.Item label="到期时间">
                             {getFieldDecorator('date-time-picker', {
-                              initialValue: moment("2021-1-14 13:16:00")
-                            //   rules: [{ required: true, message: 'Please choose the dateTime' }],
+                              initialValue: moment(TodoStore.todoSelect.expire_date)
                             })(
                               <DatePicker
                                 showTime format="YYYY-MM-DD HH:mm:ss"
@@ -90,13 +87,13 @@ class CreateDetail extends React.Component<FormComponentProps, any> {
                             )} 
                           </Form.Item>
                         </Col>
-                      </Row>
 
+                      </Row>
                       <Row gutter={16}>
                         <Col span={24}>
                           <Form.Item label="详细内容">
                             {getFieldDecorator('description', {
-                              initialValue: "详细内容",
+                              initialValue: TodoStore.todoSelect.content,
 
                             })(
                             <Input.TextArea 
@@ -123,7 +120,7 @@ class CreateDetail extends React.Component<FormComponentProps, any> {
                       <Button onClick={this.onClose} style={{ marginRight: 8 }}>
                         取消
                       </Button>
-                      <Button onClick={this.handleSubmit} type="primary" htmlType="submit">
+                      <Button onClick={this.handleSubmit} type="primary" >
                         提交
                       </Button>
                     </div>
@@ -136,6 +133,3 @@ class CreateDetail extends React.Component<FormComponentProps, any> {
 
 }
 
-// const WrappedTodoDetailCreate = Form.create({name: 'todo_create'})(DetailCreate);
-
-export default Form.create({name: 'todo_create'})(CreateDetail);
