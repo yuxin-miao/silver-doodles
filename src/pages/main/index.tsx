@@ -19,6 +19,9 @@ const Main: React.FC = () => {
           <li>
             <Link to="/todo">TODO</Link>
           </li>
+          <li>
+            <Link to="/tutorial">Tutorial</Link>
+          </li>
         </ul>
       </nav>
       <aside>aside</aside>

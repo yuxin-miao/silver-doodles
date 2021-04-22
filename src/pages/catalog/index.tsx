@@ -20,6 +20,9 @@ export const Catalog: React.FC = () => {
         <Route path="/">
           <Main/>
         </Route>
+        <Route path="/tutorial">
+          
+        </Route>
       </Switch>
     </Router>
   )
